@@ -15,6 +15,13 @@ int binarySearch(int n,int arr[],int sElement){
     }
     return -1;
 }
+int printIntArr(int arr[],int n){
+    printf("%d", arr[0]);
+    for(int i=1;i<n;i++){
+        printf(",%d",arr[i]);
+    }
+    return 0;
+}
 int main(){
     int n,searchElement,i;
     printf("Enter size of array:");
@@ -26,10 +33,7 @@ int main(){
         scanf("%d",&arr[i]);
     }
     printf("\nEntered sorted array= ");
-    printf("%d", arr[0]);
-    for(int i=1;i<n;i++){
-        printf(",%d",arr[i]);
-    }
+    printIntArr(arr,n);
     printf("\n");
     printf("Enter element to be searched: ");
     scanf("%d",&searchElement);
@@ -39,7 +43,7 @@ int main(){
         printf("Error finding %d\nPlease check if the element is present in the array and the array is sorted.\n",searchElement);
     }
     else{
-        printf("The element %d was found in position %d of the array!\n",searchElement,res);
+        printf("The element %d was found in position %d of the array!\n",searchElement,(res+1));
     }
     return 0;
 }
